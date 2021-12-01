@@ -22,10 +22,10 @@ def part_one():
 def part_two():
     res = 0
     number = [int(line) for line in lines]
-    last_sum = number[0] + number[1] + number[2]
+    last_sum = sum(number[0:3])
 
     for i in range(1, len(number) - 2):
-        cur_sum = number[i] + number[i+1] + number[i+2]
+        cur_sum = sum(number[i:i+3])
         res += cur_sum > last_sum
         last_sum = cur_sum
 
